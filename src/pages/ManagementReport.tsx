@@ -1,16 +1,16 @@
-import { 
-  ResponsiveContainer, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip, 
+import {
+  ResponsiveContainer,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
   Bar,
   Line,
   ComposedChart,
   BarChart,
   LineChart,
 } from "recharts";
-import { 
+import {
   kpiData,
   dailyProductionData,
   revenueAndMarginData,
@@ -72,17 +72,17 @@ const ManagementReport = () => {
     <div className="min-h-screen bg-slate-100 py-6">
       <div className="mx-auto max-w-[1500px] px-6">
         <header className="mb-6 flex flex-wrap items-center justify-between gap-4">
-            <div>
+          <div>
             <p className="text-[0.65rem] font-semibold uppercase tracking-[0.45em] text-slate-500">
               Raport zarządczy
             </p>
             <h1 className="mt-1 text-2xl font-semibold text-slate-900">
               Kokpit wyników tygodniowych
-              </h1>
+            </h1>
             <p className="text-sm text-slate-500">
               Zestawienie KPI produkcji i finansów dla zarządu
             </p>
-            </div>
+          </div>
           <div className={`${cardBase} px-5 py-3`}>
             <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
               Okres raportowy
@@ -93,7 +93,7 @@ const ManagementReport = () => {
             <p className="text-xs text-slate-500">
               Aktualizacja: {new Date().toLocaleDateString("pl-PL")}
             </p>
-            </div>
+          </div>
         </header>
 
         <section className="mt-6 grid gap-4 lg:grid-cols-3">
@@ -102,7 +102,7 @@ const ManagementReport = () => {
               <h2 className={cardTitleClass}>Przychód i marża – tydzień</h2>
               <div className="mt-4 h-64">
                 <ResponsiveContainer width="100%" height="100%">
-                    <ComposedChart data={revenueAndMarginData}>
+                  <ComposedChart data={revenueAndMarginData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
                     <XAxis dataKey="day" stroke="#6b7280" fontSize={10} tickLine={false} axisLine={false} />
                     <YAxis yAxisId="left" stroke="#6b7280" fontSize={10} tickLine={false} axisLine={false} />
@@ -114,16 +114,16 @@ const ManagementReport = () => {
                       ]}
                     />
                     <Bar yAxisId="left" dataKey="revenue" fill="#60a5fa" radius={[6, 6, 0, 0]} name="Przychód" />
-                      <Line 
-                        yAxisId="right"
-                        type="monotone" 
-                        dataKey="margin" 
-                        stroke="#10b981" 
-                        strokeWidth={3}
+                    <Line
+                      yAxisId="right"
+                      type="monotone"
+                      dataKey="margin"
+                      stroke="#10b981"
+                      strokeWidth={3}
                       name="Marża %"
-                      />
-                    </ComposedChart>
-                  </ResponsiveContainer>
+                    />
+                  </ComposedChart>
+                </ResponsiveContainer>
               </div>
             </div>
             <div className={`${cardBase} p-4`}>
@@ -139,9 +139,9 @@ const ManagementReport = () => {
                     <Line type="monotone" dataKey="plan" stroke="#f97316" strokeWidth={3} strokeDasharray="6 6" name="Plan" />
                   </ComposedChart>
                 </ResponsiveContainer>
-                </div>
-                </div>
               </div>
+            </div>
+          </div>
           <div className="space-y-4">
             <div className={`${cardBase} p-4`}>
               <h2 className={cardTitleClass}>Efektywność maszyn (OEE)</h2>
@@ -156,8 +156,8 @@ const ManagementReport = () => {
                     <Line type="monotone" dataKey="target" stroke="#f97316" strokeWidth={3} strokeDasharray="6 6" name="Cel" />
                   </ComposedChart>
                 </ResponsiveContainer>
-        </div>
-                  </div>
+              </div>
+            </div>
             <div className={`${cardBase} p-4`}>
               <h2 className={cardTitleClass}>Backlog i zużycie</h2>
               <div className="mt-4 h-60">
@@ -183,8 +183,8 @@ const ManagementReport = () => {
                   </ComposedChart>
                 </ResponsiveContainer>
               </div>
+            </div>
           </div>
-        </div>
         </section>
 
         <section className="mt-6 grid gap-4 lg:grid-cols-[2fr,1fr]">
@@ -215,8 +215,8 @@ const ManagementReport = () => {
                   ))}
                 </tbody>
               </table>
+            </div>
           </div>
-        </div>
 
           <div className={`${cardBase} p-4 space-y-4`}>
             <h2 className={cardTitleClass}>Najważniejsze wnioski</h2>
@@ -234,7 +234,7 @@ const ManagementReport = () => {
                   maximumFractionDigits: 1,
                 })} mln PLN.
               </p>
-              </div>
+            </div>
             <div className="rounded-md border border-amber-100 bg-amber-50 p-3">
               <p className="text-sm font-semibold text-amber-700">Koszty energii</p>
               <p className="mt-1 text-xs text-amber-700">
@@ -243,8 +243,8 @@ const ManagementReport = () => {
               <p className="mt-1 text-[0.65rem] text-amber-600">
                 Zużycie materiałów średnio {materialVariance.toFixed(1)} pp odchylone od planu – monitoruj zapasy.
               </p>
-              </div>
             </div>
+          </div>
         </section>
       </div>
     </div>
