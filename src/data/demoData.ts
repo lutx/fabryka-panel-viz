@@ -125,3 +125,71 @@ export const managementReportData = {
     target: 95
   }
 };
+
+// Executive Dashboard Data
+export const executiveKpis = {
+  weeklyRevenue: "12,4 mln PLN",
+  grossMargin: "28,6%",
+  unitCost: "415 PLN/okno",
+  otif: "93%",
+  otifTarget: "95%",
+  capacityUtilization: "82%",
+  energyIntensity: "2,3 kWh/okno"
+};
+
+export const revenueAndMarginData = [
+  { day: "Pn", revenue: 1.8, margin: 28.2 },
+  { day: "Wt", revenue: 2.1, margin: 29.1 },
+  { day: "Śr", revenue: 2.3, margin: 28.8 },
+  { day: "Cz", revenue: 1.9, margin: 27.5 },
+  { day: "Pt", revenue: 2.2, margin: 30.2 },
+  { day: "So", revenue: 1.6, margin: 26.8 },
+  { day: "Nd", revenue: 0.5, margin: 24.5 }
+];
+
+export const productMixData = [
+  { category: "PVC okna", volume: 1240, margin: 32.1 },
+  { category: "PVC drzwi", volume: 380, margin: 28.5 },
+  { category: "ALU okna", volume: 620, margin: 25.8 },
+  { category: "ALU drzwi", volume: 180, margin: 22.3 }
+];
+
+export const otifTrendData = [
+  { week: "Tydz 31", otif: 89 },
+  { week: "Tydz 32", otif: 91 },
+  { week: "Tydz 33", otif: 88 },
+  { week: "Tydz 34", otif: 92 },
+  { week: "Tydz 35", otif: 94 },
+  { week: "Tydz 36", otif: 93 },
+  { week: "Tydz 37", otif: 95 },
+  { week: "Tydz 38", otif: 93 }
+];
+
+export const backlogBySegmentData = [
+  { segment: "Detaliczny", days: 8 },
+  { segment: "Deweloperski", days: 12 },
+  { segment: "Eksport", days: 15 }
+];
+
+export const energyCostTrendData = [
+  { week: "Tydz 31", cost: 285000 },
+  { week: "Tydz 32", cost: 298000 },
+  { week: "Tydz 33", cost: 312000 },
+  { week: "Tydz 34", cost: 295000 },
+  { week: "Tydz 35", cost: 288000 },
+  { week: "Tydz 36", cost: 275000 },
+  { week: "Tydz 37", cost: 269000 },
+  { week: "Tydz 38", cost: 272000 }
+];
+
+export const unitCostByProductData = [
+  { product: "PVC std", cost: 385 },
+  { product: "PVC premium", cost: 465 },
+  { product: "ALU std", cost: 445 },
+  { product: "ALU premium", cost: 525 }
+];
+
+export const capexOpexData = [
+  { category: "CAPEX", q1: 2.8, q2: 3.2, q3: 2.1, q4: 4.5 },
+  { category: "OPEX", q1: 8.4, q2: 8.9, q3: 9.2, q4: 8.7 }
+];
