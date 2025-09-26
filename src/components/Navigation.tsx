@@ -7,18 +7,12 @@ const Navigation = () => {
   const isDashboard = location.pathname === "/" || location.pathname === "/dashboard";
 
   return (
-    <nav className={cn(
-      "border-b transition-colors",
-      isDashboard ? "bg-dashboard-bg border-dashboard-border" : "bg-background border-border"
-    )}>
+    <nav className="bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-8">
             <div className="flex-shrink-0">
-              <h1 className={cn(
-                "text-xl font-bold",
-                isDashboard ? "text-dashboard-text" : "text-foreground"
-              )}>
+              <h1 className="text-xl font-bold text-gray-900">
                 Dashboard Produkcji – Fabryka Okien PVC & ALU
               </h1>
             </div>
@@ -28,8 +22,8 @@ const Navigation = () => {
                 className={cn(
                   "flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-colors",
                   isDashboard
-                    ? "bg-dashboard-card text-dashboard-text border border-dashboard-border"
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                    ? "bg-blue-100 text-blue-700 border border-blue-200"
+                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                 )}
               >
                 <BarChart3 className="w-4 h-4 mr-2" />
@@ -40,10 +34,8 @@ const Navigation = () => {
                 className={cn(
                   "flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-colors",
                   !isDashboard
-                    ? "bg-primary text-primary-foreground"
-                    : isDashboard
-                    ? "text-dashboard-muted hover:text-dashboard-text hover:bg-dashboard-card/50"
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                    ? "bg-blue-600 text-white"
+                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                 )}
               >
                 <FileText className="w-4 h-4 mr-2" />

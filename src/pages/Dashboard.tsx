@@ -33,7 +33,7 @@ import {
 
 const Dashboard = () => {
   return (
-    <div className="dashboard-bg min-h-screen">
+    <div className="bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
         {/* KPI Cards */}
@@ -86,27 +86,28 @@ const Dashboard = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           
           {/* Daily Production vs Plan */}
-          <div className="chart-container dashboard-card">
-            <h3 className="section-title text-dashboard-text">Produkcja dzienna vs Plan</h3>
+          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Produkcja dzienna vs Plan</h3>
             <ResponsiveContainer width="100%" height={300}>
               <ComposedChart data={dailyProductionData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--dashboard-border))" />
-                <XAxis dataKey="day" stroke="hsl(var(--dashboard-muted))" />
-                <YAxis stroke="hsl(var(--dashboard-muted))" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                <XAxis dataKey="day" stroke="#6b7280" fontSize={12} />
+                <YAxis stroke="#6b7280" fontSize={12} />
                 <Tooltip 
                   contentStyle={{ 
-                    backgroundColor: "hsl(var(--dashboard-card))", 
-                    border: "1px solid hsl(var(--dashboard-border))",
-                    borderRadius: "8px"
+                    backgroundColor: "white", 
+                    border: "1px solid #e5e7eb",
+                    borderRadius: "8px",
+                    fontSize: "14px"
                   }} 
                 />
                 <Legend />
-                <Bar dataKey="actual" fill="hsl(var(--chart-primary))" name="Rzeczywista" />
+                <Bar dataKey="actual" fill="#3b82f6" name="Rzeczywista" />
                 <Line 
                   type="monotone" 
                   dataKey="plan" 
-                  stroke="hsl(var(--chart-danger))" 
-                  strokeWidth={2}
+                  stroke="#ef4444" 
+                  strokeWidth={3}
                   strokeDasharray="5 5"
                   name="Plan"
                 />
@@ -115,8 +116,8 @@ const Dashboard = () => {
           </div>
 
           {/* Defect Structure */}
-          <div className="chart-container dashboard-card">
-            <h3 className="section-title text-dashboard-text">Struktura braków</h3>
+          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Struktura braków</h3>
             <ResponsiveContainer width="100%" height={300}>
               <PieChart>
                 <Pie
@@ -142,27 +143,28 @@ const Dashboard = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           
           {/* Machine Efficiency */}
-          <div className="chart-container dashboard-card">
-            <h3 className="section-title text-dashboard-text">Efektywność maszyn (OEE)</h3>
+          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Efektywność maszyn (OEE)</h3>
             <ResponsiveContainer width="100%" height={300}>
               <ComposedChart data={machineEfficiencyData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--dashboard-border))" />
-                <XAxis dataKey="machine" stroke="hsl(var(--dashboard-muted))" />
-                <YAxis stroke="hsl(var(--dashboard-muted))" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                <XAxis dataKey="machine" stroke="#6b7280" fontSize={12} />
+                <YAxis stroke="#6b7280" fontSize={12} />
                 <Tooltip 
                   contentStyle={{ 
-                    backgroundColor: "hsl(var(--dashboard-card))", 
-                    border: "1px solid hsl(var(--dashboard-border))",
-                    borderRadius: "8px"
+                    backgroundColor: "white", 
+                    border: "1px solid #e5e7eb",
+                    borderRadius: "8px",
+                    fontSize: "14px"
                   }} 
                 />
                 <Legend />
-                <Bar dataKey="oee" fill="hsl(var(--chart-secondary))" name="OEE %" />
+                <Bar dataKey="oee" fill="#10b981" name="OEE %" />
                 <Line 
                   type="monotone" 
                   dataKey="target" 
-                  stroke="hsl(var(--chart-danger))" 
-                  strokeWidth={2}
+                  stroke="#ef4444" 
+                  strokeWidth={3}
                   strokeDasharray="5 5"
                   name="Cel 80%"
                 />
@@ -171,22 +173,23 @@ const Dashboard = () => {
           </div>
 
           {/* Material Usage */}
-          <div className="chart-container dashboard-card">
-            <h3 className="section-title text-dashboard-text">Zużycie materiałów vs Plan (%)</h3>
+          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Zużycie materiałów vs Plan (%)</h3>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={materialUsageData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--dashboard-border))" />
-                <XAxis dataKey="material" stroke="hsl(var(--dashboard-muted))" />
-                <YAxis stroke="hsl(var(--dashboard-muted))" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                <XAxis dataKey="material" stroke="#6b7280" fontSize={12} />
+                <YAxis stroke="#6b7280" fontSize={12} />
                 <Tooltip 
                   contentStyle={{ 
-                    backgroundColor: "hsl(var(--dashboard-card))", 
-                    border: "1px solid hsl(var(--dashboard-border))",
-                    borderRadius: "8px"
+                    backgroundColor: "white", 
+                    border: "1px solid #e5e7eb",
+                    borderRadius: "8px",
+                    fontSize: "14px"
                   }} 
                 />
                 <Legend />
-                <Bar dataKey="usage" fill="hsl(var(--chart-tertiary))" name="Rzeczywiste zużycie %" />
+                <Bar dataKey="usage" fill="#f59e0b" name="Rzeczywiste zużycie %" />
               </BarChart>
             </ResponsiveContainer>
           </div>
