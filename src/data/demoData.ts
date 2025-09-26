@@ -6,7 +6,8 @@ export const kpiData = {
   oee: "76%",
   downtime: "10h/tydz",
   unitCost: "415 PLN/okno",
-  energyConsumption: "34,5 MWh/tydz"
+  energyConsumption: "72,5 MWh/tydz",
+  energyCostWeekly: 54500,
 };
 
 export const dailyProductionData = [
@@ -98,7 +99,7 @@ export const managementReportData = {
       unitCost: 405
     },
     {
-      line: "PVC B", 
+      line: "PVC B",
       production: 7850,
       defects: 2.8,
       oee: 72,
@@ -172,14 +173,14 @@ export const backlogBySegmentData = [
 ];
 
 export const energyCostTrendData = [
-  { week: "Tydz 31", cost: 285000 },
-  { week: "Tydz 32", cost: 298000 },
-  { week: "Tydz 33", cost: 312000 },
-  { week: "Tydz 34", cost: 295000 },
-  { week: "Tydz 35", cost: 288000 },
-  { week: "Tydz 36", cost: 275000 },
-  { week: "Tydz 37", cost: 269000 },
-  { week: "Tydz 38", cost: 272000 }
+  { week: "Tydz 31", cost: 51500 },
+  { week: "Tydz 32", cost: 53700 },
+  { week: "Tydz 33", cost: 54900 },
+  { week: "Tydz 34", cost: 52800 },
+  { week: "Tydz 35", cost: 52100 },
+  { week: "Tydz 36", cost: 50800 },
+  { week: "Tydz 37", cost: 49900 },
+  { week: "Tydz 38", cost: 50200 }
 ];
 
 export const unitCostByProductData = [
