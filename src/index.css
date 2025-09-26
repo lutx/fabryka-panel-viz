@@ -2,41 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Production Dashboard Design System - Professional BI Interface */
 
 @layer base {
   :root {
+    /* Light theme - for management reports */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 215 25% 27%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 214 84% 56%;
+    --primary-foreground: 0 0% 98%;
 
     --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary-foreground: 215 25% 27%;
 
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted-foreground: 215 16% 47%;
 
     --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent-foreground: 215 25% 27%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 98%;
 
-    --radius: 0.5rem;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 214 84% 56%;
+
+    --radius: 0.75rem;
+
+    /* Professional dashboard colors */
+    --dashboard-bg: 217 33% 17%;
+    --dashboard-card: 215 28% 17%;
+    --dashboard-border: 215 20% 25%;
+    --dashboard-text: 210 20% 98%;
+    --dashboard-muted: 215 15% 70%;
+
+    /* Chart colors */
+    --chart-primary: 214 84% 56%;
+    --chart-secondary: 142 71% 45%;
+    --chart-tertiary: 38 92% 50%;
+    --chart-quaternary: 280 100% 70%;
+    --chart-danger: 0 84% 60%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -92,6 +111,16 @@ All colors MUST be HSL.
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  /* Dashboard theme class */
+  .dashboard-theme {
+    --background: var(--dashboard-bg);
+    --foreground: var(--dashboard-text);
+    --card: var(--dashboard-card);
+    --card-foreground: var(--dashboard-text);
+    --border: var(--dashboard-border);
+    --muted-foreground: var(--dashboard-muted);
+  }
 }
 
 @layer base {
@@ -101,5 +130,43 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Dashboard specific styles */
+  .dashboard-bg {
+    background: hsl(var(--dashboard-bg));
+    color: hsl(var(--dashboard-text));
+  }
+
+  .dashboard-card {
+    background: hsl(var(--dashboard-card));
+    border: 1px solid hsl(var(--dashboard-border));
+  }
+
+  /* Chart containers */
+  .chart-container {
+    @apply rounded-lg border bg-card p-6;
+  }
+
+  /* KPI card styles */
+  .kpi-card {
+    @apply rounded-xl border bg-card p-6 shadow-sm transition-all hover:shadow-md;
+  }
+
+  .kpi-value {
+    @apply text-3xl font-bold tracking-tight;
+  }
+
+  .kpi-label {
+    @apply text-sm font-medium text-muted-foreground;
+  }
+
+  /* Professional typography */
+  .report-title {
+    @apply text-2xl font-bold tracking-tight text-foreground;
+  }
+
+  .section-title {
+    @apply text-lg font-semibold text-foreground mb-4;
   }
 }
